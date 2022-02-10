@@ -1,11 +1,15 @@
 .container {
-  max-width: 52.5rem;
   width: 100%;
 
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 header {
+  text-align: center;
+  margin-bottom: 15px;
+
   span.category {
     display: block;
     margin-top: 2rem;
@@ -25,9 +29,23 @@ main {
   margin-top: 5.625rem;
 
   .movies-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 4.75rem;
-    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 990px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  nav.sidebar .buttons-container {
+    align-items: center;
   }
 }
